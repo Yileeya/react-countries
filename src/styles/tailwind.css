@@ -5,11 +5,51 @@
 @theme {
     --font-sans: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-grey-950: #111517;
+    --color-grey-400: #808080;
+    --color-grey-350: #979797;
+    --color-grey-300: #b2b2b2;
+    --color-grey-250: #c4c4c4;
+    --color-grey-50: #fcfcfc;
+    --color-blue-950: #202c36;
+    --color-blue-900: #2b3844;
+
+    --primary-bg: var(--color-white);
+    --primary-text: var(--color-grey-950);
+
+    --spacing-100: 8px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-500: 40px;
+    --spacing-600: 48px;
+    --spacing-700: 56px;
+    --spacing-800: 64px;
+    --spacing-900: 72px;
+    --spacing-1000: 80px;
+
+    --text-1: 2rem;
+    --text-1--line-height: calc(var(--text-1) * 1.375);
+    --text-2: 1.5rem;
+    --text-2--line-height: calc(var(--text-2) * 1.375);
+    --text-3: 1.125rem;
+    --text-3--line-height: calc(var(--text-3) * 1.45);
+    --text-4: 1rem;
+    --text-4--line-height: calc(var(--text-4) * 2);
+    --text-5: 0.875rem;
+    --text-5--line-height: calc(var(--text-5) * 1.45);
+    --text-6: 0.75rem;
+    --text-6--line-height: calc(var(--text-6) * 1.35);
 }
 
 /* 其他主題覆寫，用 data-theme 或 class，這邊示範 data-theme */
 @layer theme {
     [data-theme="dark"] {
+        --primary-bg: var(--color-blue-900);
+        --primary-text: var(--color-white);
     }
 }
 
