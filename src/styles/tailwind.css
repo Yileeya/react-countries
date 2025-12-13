@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pacifico&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* 其他主題覆寫，用 data-theme 或 class，這邊示範 data-theme */
+@layer theme {
+    [data-theme="dark"] {
+    }
+}
+
