@@ -1,0 +1,40 @@
+/* -----------------------------
+   Webkit Browsers (Chrome, Safari, Edge)
+------------------------------ */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-grey-50); /* 淺灰軌道 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-blue-900); /* 深藍滑塊 */
+  border-radius: 10px;
+  border: 3px solid var(--color-grey-50); /* 軌道邊距感 */
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue-950); /* hover 深藍更深 */
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color-grey-50);
+}
+
+/* -----------------------------
+   Firefox
+------------------------------ */
+* {
+  scrollbar-width: thin; /* thin, auto, none */
+  scrollbar-color: var(--color-blue-900) var(--color-grey-50); /* thumb color | track color */
+}
+
+/* 可選：增強滑順感（滾動時過渡） */
+html {
+  scroll-behavior: smooth;
+}
