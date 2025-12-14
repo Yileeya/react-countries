@@ -35,7 +35,7 @@ const RegionSelect: React.FC<RegionSelectProps> = ({ value, onChange }) => {
     <div className="relative w-[200px]" ref={regionSelectRef}>
       <button
         onClick={() => setIsOpen(o => !o)}
-        className="text-grey-950 text-5 flex h-14 w-full cursor-pointer items-center justify-between rounded-[5px] bg-white px-6 text-left shadow-[0px_2px_9px_0px_#0000000E]"
+        className="text-grey-950 text-6 md:text-5 flex h-12 md:h-14 w-full cursor-pointer items-center justify-between rounded-[5px] bg-white px-6 text-left shadow-[0px_2px_9px_0px_#0000000E]"
       >
         {value}
         <DownArrowIcon />
@@ -50,7 +50,7 @@ const RegionSelect: React.FC<RegionSelectProps> = ({ value, onChange }) => {
                 onChange(region);
                 close();
               }}
-              className="text-5 text-grey-950 cursor-pointer px-6 py-1 hover:bg-gray-100"
+              className="text-6 md:text-5 text-grey-950 cursor-pointer px-6 py-1 hover:bg-gray-100"
             >
               {region}
             </li>

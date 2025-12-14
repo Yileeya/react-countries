@@ -13,7 +13,7 @@ const CountryCard: React.FC<{
 
   return (
     <div
-      className="w-[264px] cursor-pointer rounded-[5px] bg-white shadow-[0_0_7px_2px_rgba(0,0,0,0.1)] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] active:scale-[0.98]"
+      className="w-[264px] cursor-pointer overflow-hidden rounded-[5px] bg-white shadow-[0_0_7px_2px_rgba(0,0,0,0.1)] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] active:scale-[0.98]"
       onClick={() => handleCardClick(country.cca3)}
     >
       <img src={flags.png} alt={flags.alt} className="h-[160px] w-full" />
