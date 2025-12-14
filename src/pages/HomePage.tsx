@@ -4,6 +4,7 @@ import type { iCountryShort, tRegion } from '@/types/country';
 import CountryCard from '@components/CountryCard';
 import SearchInput from '@components/SearchInput.tsx';
 import RegionSelect from '@components/RegionSelect.tsx';
+import NoDataMessage from '@components/NoDataMessage.tsx';
 
 const HomePage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -33,6 +34,12 @@ const HomePage: React.FC = () => {
         <SearchInput value={searchTerm} onChange={setSearchTerm} />
         <RegionSelect value={region} onChange={setRegion} />
       </div>
+      {!countries?.length && (
+        <NoDataMessage
+          title="No countries found"
+          description="Try changing the region or search keyword."
+        />
+      )}
       <div className="grid grid-cols-1 justify-items-center gap-500 md:grid-cols-2 md:justify-items-center md:gap-900 xl:grid-cols-4 xl:justify-items-start">
         {(countries || []).map((country: iCountryShort) => (
           <CountryCard country={country} key={country.cca3} />
