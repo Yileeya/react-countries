@@ -9,7 +9,7 @@ function App() {
         <div className="min-h-screen">
             <Header/>
 
-            <main className="container mx-auto px-4 py-8">
+            <main className="container mx-auto px-4 pb-8 mt-[80px] ">
                 <Routes>
 
                     <Route path="/" element={<HomePage/>}/>
