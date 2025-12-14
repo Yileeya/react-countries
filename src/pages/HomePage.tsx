@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
     <div className="mx-auto pt-6 md:max-w-[688px] md:pt-12 xl:max-w-[1272px]">
       <div
         ref={ref}
-        className={`sticky top-[96px] z-20 mb-9 flex flex-wrap items-center justify-between gap-x-2 gap-y-10 transition-all duration-300 ease-in-out md:mb-12 ${isSticky ? 'rounded-lg bg-white/95 p-2.5 shadow-lg backdrop-blur-sm md:px-6 md:py-4' : 'bg-white'}`}
+        className={`sticky top-[96px] z-20 mb-9 flex flex-wrap items-center justify-between gap-x-2 gap-y-10 rounded-[5px] transition-all duration-300 ease-in-out md:mb-12 ${isSticky ? 'rounded-lg bg-white/95 p-2.5 shadow-lg backdrop-blur-sm md:px-6 md:py-4 dark:bg-blue-950/95' : 'bg-transparent'}`}
       >
         <SearchInput value={searchTerm} onChange={setSearchTerm} />
         <RegionSelect value={region} onChange={setRegion} />
