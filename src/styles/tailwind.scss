@@ -63,10 +63,16 @@
   }
 }
 
-.country-card-info {
-  @apply text-5 relative leading-[16px] font-light;
-  &:before {
+.country-info {
+  @apply relative font-light;
+  &::before {
     @apply font-semibold;
     content: attr(data-label) ': ';
   }
+}
+.country-info[data-size='card'] {
+  @apply text-5 leading-[16px];
+}
+.country-info[data-size='detail'] {
+  @apply text-5 md:text-4 leading-8;
 }

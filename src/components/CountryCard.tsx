@@ -19,13 +19,13 @@ const CountryCard: React.FC<{
       <img src={flags.png} alt={flags.alt} className="h-[160px] w-full" />
       <div className="min-h-[176px] px-6 py-[22px]">
         <h3 className="text-3 mb-4 font-extrabold">{name.common}</h3>
-        <p className="country-card-info" data-label="Population">
+        <p className="country-info" data-size="card" data-label="Population">
           {population.toLocaleString()}
         </p>
-        <p className="country-card-info my-2" data-label="Region">
+        <p className="country-info my-2" data-size="card" data-label="Region">
           {region}
         </p>
-        <p className="country-card-info" data-label="Capital">
+        <p className="country-info" data-size="card" data-label="Capital">
           {capital?.length ? capital.join(', ') : '-'}
         </p>
       </div>

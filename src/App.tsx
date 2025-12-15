@@ -6,10 +6,10 @@ import Header from '@components/Header';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-blue-950">
       <Header />
 
-      <main className="container mx-auto mt-[80px] bg-white px-4 pb-8 dark:bg-blue-950">
+      <main className="container mx-auto mt-[80px] flex-1 px-4 pb-8">
         <Routes>
           <Route path="/" element={<HomePage />} />
 
