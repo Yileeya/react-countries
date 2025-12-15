@@ -25,7 +25,7 @@ const DetailPage: React.FC = () => {
         <StickyBackButton
           to="/"
           extraTopDesktop={60}
-          extraTopMobile={60}
+          extraTopMobile={16}
           className={`top-[120px] mb-10 xl:top-[160px] ${stickyContainerClasses}`}
         />
         <NoDataMessage
@@ -41,7 +41,7 @@ const DetailPage: React.FC = () => {
       <StickyBackButton
         to="/"
         extraTopDesktop={60}
-        extraTopMobile={60}
+        extraTopMobile={16}
         className={`top-[120px] xl:top-[160px] ${stickyContainerClasses}`}
       />
 
@@ -144,7 +144,9 @@ const DetailPage: React.FC = () => {
                   </RouterButton>
                 ))
               ) : (
-                <p>No bordering countries.</p>
+                <p className="text-5 md:text-4 leading-8 font-light">
+                  No bordering countries.
+                </p>
               )}
             </div>
           </div>
