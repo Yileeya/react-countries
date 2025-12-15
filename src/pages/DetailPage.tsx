@@ -3,7 +3,10 @@ import { useCountryDetailQuery } from '@hooks/useCountryDetail';
 import { useBorderCountriesQuery } from '@hooks/useBorderCountries';
 import NoDataMessage from '@components/NoDataMessage.tsx';
 import RouterButton from '@components/RouterButton.tsx';
-import LeftArrowIcon from '@/assets/left-arrow.svg?react';
+import StickyBackButton from '@components/StickyBackButton.tsx';
+
+const stickyContainerClasses =
+  'mx-auto max-w-[320px] md:max-w-[570px] xl:max-w-[1278px]';
 
 const DetailPage: React.FC = () => {
   const { cca3Code } = useParams<{ cca3Code: string }>();
@@ -18,16 +21,13 @@ const DetailPage: React.FC = () => {
 
   if (isCountryError || !country) {
     return (
-      <div className="mx-auto py-20 lg:max-w-[1278px]">
-        <div className="sticky top-[160px] z-20">
-          <RouterButton
-            to="/"
-            className="mb-20 h-10 w-[136px] shadow-[0_0_7px_0_#0000001A]"
-          >
-            <LeftArrowIcon className="text-4 mr-2" />
-            Back
-          </RouterButton>
-        </div>
+      <div className="relative mx-auto py-10 md:py-20 xl:max-w-[1278px]">
+        <StickyBackButton
+          to="/"
+          extraTopDesktop={60}
+          extraTopMobile={60}
+          className={`top-[120px] mb-10 xl:top-[160px] ${stickyContainerClasses}`}
+        />
         <NoDataMessage
           title="Failed to Load Country Details"
           description={`Could not fetch country details for code: ${cca3Code}`}
@@ -37,26 +37,27 @@ const DetailPage: React.FC = () => {
   }
 
   return (
-    <div className="mx-auto py-20 lg:max-w-[1278px]">
-      <RouterButton
+    <div className="mx-auto py-10 md:py-10 xl:max-w-[1278px] xl:py-20">
+      <StickyBackButton
         to="/"
-        className="h-10 w-[136px] shadow-[0_0_7px_0_#0000001A]"
-      >
-        <LeftArrowIcon className="text-4 mr-2" />
-        Back
-      </RouterButton>
+        extraTopDesktop={60}
+        extraTopMobile={60}
+        className={`top-[120px] xl:top-[160px] ${stickyContainerClasses}`}
+      />
 
-      <div className="mt:my-[56px] mx-auto mt-[64px] mb-5 flex max-w-[320px] flex-wrap items-center gap-x-[120px] gap-y-[48px] md:max-w-[570px] md:gap-y-[56px] lg:mt-[80px] lg:max-w-[1278px] lg:gap-y-[0]">
+      <div
+        className={`mx-auto mt-[64px] mb-5 flex flex-wrap items-center gap-x-[120px] gap-y-[48px] md:my-[56px] md:gap-y-[56px] xl:mt-[80px] xl:gap-y-[0] ${stickyContainerClasses}`}
+      >
         <img
           src={country.flags.svg}
           alt={country.flags.alt}
-          className="max-h-[229px] w-full rounded-[10px] shadow-[0_0_14px_4px_#00000008] md:max-h-[408px] lg:max-h-[401px] lg:max-w-[560px]"
+          className="max-h-[229px] w-full rounded-[10px] shadow-[0_0_14px_4px_#00000008] md:max-h-[408px] xl:max-h-[401px] xl:max-w-[560px]"
         />
         <div className="text-grey-950 flex-1 dark:text-white">
           <h1 className="text-2 md:text-1 font-extrabold">
             {country.name.common}
           </h1>
-          <div className="mt-4 mb-8 flex flex-wrap justify-between gap-y-8 md:mt-6 md:mb-6 lg:mb-16">
+          <div className="mt-4 mb-8 flex flex-wrap justify-between gap-y-8 md:mt-6 md:mb-6 xl:mb-16">
             <div>
               <p
                 className="country-info"
