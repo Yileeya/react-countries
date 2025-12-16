@@ -1,19 +1,9 @@
-import { useEffect, useState } from 'react';
 import BrightnessIcon from '@/assets/brightness.svg?react';
 import DarkModeOffIcon from '@/assets/dark-mode.svg?react';
-
-type tTheme = 'light' | 'dark';
+import { useTheme } from '@/contexts/theme-context.tsx';
 
 export default function App() {
-  const [theme, setTheme] = useState<tTheme>('light');
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme]);
+  const { theme, toggleTheme } = useTheme();
 
   const themes = {
     light: {
@@ -33,7 +23,7 @@ export default function App() {
   return (
     <button
       className={`text-6 md:text-4 flex cursor-pointer items-center gap-2 rounded px-2 py-1 font-semibold ${current.className}`}
-      onClick={() => setTheme(t => (t === 'light' ? 'dark' : 'light'))}
+      onClick={toggleTheme}
     >
       {current.icon}
       {current.text}
