@@ -1,4 +1,4 @@
-import { useStickyHeader } from '@hooks/ui/useStickyHeader.ts';
+import { useStickyHeader } from '@hooks/shared/useStickyHeader.ts';
 import LeftArrowIcon from '@/assets/left-arrow.svg?react';
 import RouterButton from '@components/ui/RouterButton.tsx';
 

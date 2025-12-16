@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useAllCountriesData } from '@/hooks/useAllCountriesData.ts';
+import { useAllCountriesData } from '@hooks/country/useAllCountriesData.ts';
 import type { iCountryQueryParams, iCountryShort } from '@/types/country.ts';
 
 /**

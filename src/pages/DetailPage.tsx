@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { useCountryDetailQuery } from '@hooks/useCountryDetail';
-import { useBorderCountriesQuery } from '@hooks/useBorderCountries';
+import { useCountryDetailQuery } from '@hooks/country/useCountryDetail.ts';
+import { useBorderCountriesQuery } from '@hooks/country/useBorderCountries.ts';
 import NoDataMessage from '@components/ui/NoDataMessage.tsx';
 import RouterButton from '@components/ui/RouterButton.tsx';
 import StickyBackButton from '@components/layout/StickyBackButton.tsx';

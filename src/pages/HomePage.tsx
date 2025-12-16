@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useFilteredCountries } from '@hooks/useFilteredCountries';
-import { useStickyHeader } from '@hooks/ui/useStickyHeader';
+import { useFilteredCountries } from '@hooks/country/useFilteredCountries.ts';
+import { useStickyHeader } from '@hooks/shared/useStickyHeader.ts';
 import type { iCountryShort, tRegion } from '@/types/country';
 import CountryCard from '@components/country/CountryCard.tsx';
 import SearchInput from '@components/country/SearchInput.tsx';
