@@ -3,14 +3,18 @@ import SearchOffIcon from '@/assets/search-off.svg?react';
 interface NoDataMessageProps {
   title?: string;
   description?: string;
+  className?: string;
 }
 
 const NoDataMessage: React.FC<NoDataMessageProps> = ({
   title = 'No results found.',
   description = 'Please try adjusting your filters or search terms.',
+  className,
 }) => {
   return (
-    <div className="theme-primary flex flex-col items-center justify-center gap-1 rounded-lg border border-gray-100 py-10 shadow">
+    <div
+      className={`theme-primary flex flex-col items-center justify-center gap-1 rounded-lg border border-gray-100 py-10 shadow ${className}`}
+    >
       <SearchOffIcon className="mb-4" width={60} height={60} />
 
       <p className="text-2 font-semibold">{title}</p>

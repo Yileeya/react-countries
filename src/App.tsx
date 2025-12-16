@@ -2,7 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import HomePage from '@pages/HomePage';
 import DetailPage from '@pages/DetailPage';
-import Header from '@components/layout/Header.tsx';
+import Header from '@components/layout/Header';
+import NoDataMessage from '@components/ui/NoDataMessage';
 
 function App() {
   return (
@@ -18,9 +19,11 @@ function App() {
           <Route
             path="*"
             element={
-              <p className="mt-10 text-center text-xl font-semibold">
-                404 - 頁面不存在
-              </p>
+              <NoDataMessage
+                title="Oops! Page not found"
+                description="We can’t seem to find the page you’re looking for."
+                className="mx-auto my-20 md:max-w-[688px] xl:max-w-[1272px]"
+              />
             }
           />
         </Routes>
