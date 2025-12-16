@@ -4,6 +4,7 @@ import { useBorderCountriesQuery } from '@hooks/useBorderCountries';
 import NoDataMessage from '@components/NoDataMessage.tsx';
 import RouterButton from '@components/RouterButton.tsx';
 import StickyBackButton from '@components/StickyBackButton.tsx';
+import CountryDetailSkeleton from '@components/skeletons/CountryDetailSkeleton.tsx';
 
 const stickyContainerClasses =
   'mx-auto max-w-[320px] md:max-w-[570px] xl:max-w-[1278px]';
@@ -12,14 +13,29 @@ const DetailPage: React.FC = () => {
   const { cca3Code } = useParams<{ cca3Code: string }>();
 
   // 主查詢：獲取國家詳細資訊
-  const { data: country, isError: isCountryError } =
-    useCountryDetailQuery(cca3Code);
+  const {
+    data: country,
+    isError: isCountryError,
+    isLoading: isCountryLoading,
+  } = useCountryDetailQuery(cca3Code);
 
   // 依賴查詢：獲取鄰國名稱(只有在主查詢成功且 country.borders 存在時，才會執行)
   const { data: borderCountries, isLoading: isBorderLoading } =
     useBorderCountriesQuery(country?.borders);
 
-  if (isCountryError || !country) {
+  if (isCountryLoading) {
+    return (
+      <div className="relative mx-auto py-10 md:py-20 xl:max-w-[1278px]">
+        <StickyBackButton
+          to="/"
+          extraTopDesktop={60}
+          extraTopMobile={16}
+          className={`top-[120px] mb-10 xl:top-[160px] ${stickyContainerClasses}`}
+        />
+        <CountryDetailSkeleton />
+      </div>
+    );
+  } else if (isCountryError || !country) {
     return (
       <div className="relative mx-auto py-10 md:py-20 xl:max-w-[1278px]">
         <StickyBackButton
