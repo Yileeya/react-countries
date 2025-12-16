@@ -35,7 +35,9 @@ const DetailPage: React.FC = () => {
         <CountryDetailSkeleton />
       </div>
     );
-  } else if (isCountryError || !country) {
+  }
+
+  if (isCountryError || !country) {
     return (
       <div className="relative mx-auto py-10 md:py-20 xl:max-w-[1278px]">
         <StickyBackButton
