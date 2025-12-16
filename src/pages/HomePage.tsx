@@ -6,6 +6,7 @@ import CountryCard from '@components/CountryCard';
 import SearchInput from '@components/SearchInput.tsx';
 import RegionSelect from '@components/RegionSelect.tsx';
 import NoDataMessage from '@components/NoDataMessage.tsx';
+import CountryCardGridSkeleton from '@components/skeletons/CountryCardGridSkeleton.tsx';
 
 const HomePage: React.FC = () => {
   const { ref, isSticky } = useStickyHeader(45, 16);
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
     data: countries,
     isError,
     error,
+    isLoading,
   } = useFilteredCountries({
     searchTerm,
     region,
@@ -40,6 +42,22 @@ const HomePage: React.FC = () => {
         <SearchInput value={searchTerm} onChange={setSearchTerm} />
         <RegionSelect value={region} onChange={setRegion} />
       </div>
+
+      {isLoading ? (
+        <CountryCardGridSkeleton />
+      ) : !countries?.length ? (
+        <NoDataMessage
+          title="No countries found"
+          description="Try changing the region or search keyword."
+        />
+      ) : (
+        <div className="grid grid-cols-1 justify-items-center gap-500 md:grid-cols-2 md:gap-900 xl:grid-cols-4 xl:justify-items-start">
+          {countries.map((country: iCountryShort) => (
+            <CountryCard country={country} key={country.cca3} />
+          ))}
+        </div>
+      )}
+
       {!countries?.length && (
         <NoDataMessage
           title="No countries found"
