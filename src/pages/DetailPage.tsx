@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useCountryDetailQuery } from '@hooks/useCountryDetail';
 import { useBorderCountriesQuery } from '@hooks/useBorderCountries';
-import NoDataMessage from '@components/NoDataMessage.tsx';
-import RouterButton from '@components/RouterButton.tsx';
-import StickyBackButton from '@components/StickyBackButton.tsx';
-import CountryDetailSkeleton from '@components/skeletons/CountryDetailSkeleton.tsx';
+import NoDataMessage from '@components/ui/NoDataMessage.tsx';
+import RouterButton from '@components/ui/RouterButton.tsx';
+import StickyBackButton from '@components/layout/StickyBackButton.tsx';
+import CountryDetailSkeleton from '@components/country/CountryDetailSkeleton.tsx';
 
 const stickyContainerClasses =
   'mx-auto max-w-[320px] md:max-w-[570px] xl:max-w-[1278px]';

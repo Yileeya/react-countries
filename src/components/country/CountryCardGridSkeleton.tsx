@@ -1,4 +1,4 @@
-import CountryCardSkeleton from '@components/skeletons/CountryCardSkeleton';
+import CountryCardSkeleton from '@components/country/CountryCardSkeleton.tsx';
 
 export default function CountryCardGridSkeleton() {
   return (

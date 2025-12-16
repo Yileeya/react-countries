@@ -1,4 +1,4 @@
-import type { iCountryShort } from '@/types/country';
+import type { iCountryShort } from '@/types/country.ts';
 import { useNavigate } from 'react-router-dom';
 
 const CountryCard: React.FC<{

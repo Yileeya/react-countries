@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from 'react';
-import { useClickOutside } from '@hooks/ui/useClickOutside';
-import type { tRegion } from '@/types/country';
+import { useClickOutside } from '@hooks/ui/useClickOutside.ts';
+import type { tRegion } from '@/types/country.ts';
 import DownArrowIcon from '@/assets/down-arrow.svg?react';
 
 interface RegionSelectProps {

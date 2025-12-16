@@ -1,6 +1,6 @@
-import { useStickyHeader } from '@hooks/ui/useStickyHeader';
+import { useStickyHeader } from '@hooks/ui/useStickyHeader.ts';
 import LeftArrowIcon from '@/assets/left-arrow.svg?react';
-import RouterButton from '@components/RouterButton.tsx';
+import RouterButton from '@components/ui/RouterButton.tsx';
 
 interface StickyBackButtonProps {
   to: string;

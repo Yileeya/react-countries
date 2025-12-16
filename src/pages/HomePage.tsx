@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useFilteredCountries } from '@hooks/useFilteredCountries';
 import { useStickyHeader } from '@hooks/ui/useStickyHeader';
 import type { iCountryShort, tRegion } from '@/types/country';
-import CountryCard from '@components/CountryCard';
-import SearchInput from '@components/SearchInput.tsx';
-import RegionSelect from '@components/RegionSelect.tsx';
-import NoDataMessage from '@components/NoDataMessage.tsx';
-import CountryCardGridSkeleton from '@components/skeletons/CountryCardGridSkeleton.tsx';
+import CountryCard from '@components/country/CountryCard.tsx';
+import SearchInput from '@components/country/SearchInput.tsx';
+import RegionSelect from '@components/country/RegionSelect.tsx';
+import NoDataMessage from '@components/ui/NoDataMessage.tsx';
+import CountryCardGridSkeleton from '@components/country/CountryCardGridSkeleton.tsx';
 
 const HomePage: React.FC = () => {
   const { ref, isSticky } = useStickyHeader(45, 16);

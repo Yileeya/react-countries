@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ThemeToggleButton from '@components/ThemeToggleButton.tsx';
+import ThemeToggleButton from '@components/ui/ThemeToggleButton.tsx';
 
 function Header() {
   return (
