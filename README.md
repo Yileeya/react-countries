@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# REST Countries API with color theme switcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Demo](https://yileeya.github.io/react-countries/)
 
-Currently, two official plugins are available:
+![Homepage Screenshot](public/page_home.png)
+![DetailPage Screenshot](public/page_detail.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+This project is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).  
+It is a single-page application (SPA) built with React that fetches data from the REST Countries API.  
+Users can search for countries, filter them by region, and toggle between light and dark mode.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
+## Features
 
-## Expanding the ESLint configuration
+- Display all countries on the homepage
+- Search countries by name
+- Filter countries by region
+- View detailed information on a separate country page
+- Navigate through border countries from the detail page
+- Toggle between light and dark mode
+- Sticky search bar so it remains visible when scrolling
+- Fully responsive design for mobile and desktop
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **React 19 & TypeScript**: Utilizing the latest React features with strict type safety.
+- **TanStack Query**: Handles server-state management, caching, and efficient data fetching.
+- **Tailwind CSS V4**: Modern, high-performance utility-first styling.
+- **React Router**: Manages client-side routing and dynamic URL parameters.
+- **Axios**: Structured HTTP client for API requests.
+- **React Loading Skeleton**: Provides elegant visual feedback during loading states.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Key Highlights & Challenges
+
+- **Performance Optimization**: Implemented **TanStack Query** to cache API responses, significantly reducing redundant network requests and improving navigation speed.
+- **Polished UX**: Integrated **Skeleton Screens** to prevent layout shifts (CLS) and enhanced UI accessibility with a **Sticky Search Bar**.
+- **Advanced State Management**: Used **Context API** combined with custom hooks to manage the global theme without prop-drilling.
+- **Data Integrity**: Leveraged **TypeScript Interfaces** to map the complex REST Countries API schema, ensuring code reliability and preventing runtime errors.
+
+---
+
+## Installation / Setup
+Make sure you have Node.js 20 or above installed.
+1. Install dependencies:
+```bash
+   npm install
+    # or
+    yarn install
 ```
+2. Start the development server:
+```bash
+   npm run dev
+    # or
+    yarn dev
+```
+3. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+react-countries/
+├─ public/       
+├─ src/
+│  ├─ api/        
+│  ├─ assets/   
+│  ├─ components/ 
+│  ├─ contexts/   # Context Providers
+│  ├─ hooks/     
+│  ├─ pages/      
+│  ├─ styles/     
+│  ├─ types/ 
+│  ├─ App.tsx 
+│  ├─ index.css
+│  └─ main.tsx
+├─ .prettierrc.json
+├─ eslint.config.js
+├─ index.html
+├─ package.json
+├─ tsconfig.json
+└─ vite.config.ts     
 ```
