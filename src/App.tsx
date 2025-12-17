@@ -4,12 +4,14 @@ import HomePage from '@pages/HomePage';
 import DetailPage from '@pages/DetailPage';
 import Header from '@components/layout/Header';
 import NoDataMessage from '@components/ui/NoDataMessage';
+import ScrollToTop from '@components/layout/ScrollToTop';
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-blue-950">
       <Header />
       <main className="container mx-auto mt-[80px] flex-1 px-4 pb-8">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
 

@@ -22,7 +22,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return saved ?? 'light';
   });
 
-  const [skeletonKey, setSkeletonKey] = useState(0);
   const [skeletonColors, setSkeletonColors] = useState({
     base: '',
     highlight: '',
@@ -41,8 +40,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       base: rootStyles.getPropertyValue('--skeleton-base').trim(),
       highlight: rootStyles.getPropertyValue('--skeleton-highlight').trim(),
     });
-
-    setSkeletonKey(prev => prev + 1); // 強制 SkeletonTheme 更新
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
@@ -52,7 +49,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <SkeletonTheme
-        key={skeletonKey}
         baseColor={skeletonColors.base}
         highlightColor={skeletonColors.highlight}
       >
