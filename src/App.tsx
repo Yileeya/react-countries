@@ -8,7 +8,7 @@ import ScrollToTop from '@components/layout/ScrollToTop';
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-white dark:bg-blue-950">
+    <div className="flex min-h-screen flex-col bg-grey-50 dark:bg-blue-950">
       <Header />
       <main className="container mx-auto mt-[80px] flex-1 px-4 pb-8">
         <ScrollToTop />
